@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
 }
 
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return []
+}
+
 export default async function PageLayout(props: { children: React.ReactNode }) {
   const customer = await retrieveCustomer()
   const cart = await retrieveCart()
