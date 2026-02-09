@@ -14,9 +14,5 @@ export const metadata: Metadata = {
 }
 
 export default function StaticHome() {
-  return (
-    <>
-      <Hero />
-    </>
-  )
+  return <Hero />
 }

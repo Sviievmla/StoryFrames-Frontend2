@@ -26,11 +26,7 @@ export default async function Home(props: {
   const isStaticExport = process.env.GITHUB_PAGES === 'true'
 
   if (isStaticExport) {
-    return (
-      <>
-        <Hero />
-      </>
-    )
+    return <Hero />
   }
 
   const region = await getRegion(countryCode)
