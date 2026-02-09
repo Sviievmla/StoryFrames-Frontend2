@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryFrames - Mauve Theme Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mauve-bg: #836475;
+            --panel: rgba(255,255,255,.06);
+            --panel2: rgba(0,0,0,.25);
+            --text-light: #fcfbfc;
+            --text-muted: rgba(252,251,252,.85);
+            --line: rgba(255,255,255,.14);
+            --rose: #ff4d7d;
+            --rose-light: #ff86ad;
+            --gold: #e7c27a;
+            --shadow-xl: 0 18px 70px rgba(0,0,0,.50);
+            --shadow-lg: 0 12px 30px rgba(0,0,0,.35);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--text-light);
+            background: 
+                linear-gradient(180deg, rgba(131,100,117,.95) 0%, rgba(131,100,117,.98) 100%),
+                url('/images/storyframes/gallery-1.jpeg') center/cover fixed,
+                radial-gradient(900px 520px at 12% -8%, rgba(255,77,125,.26), transparent 60%),
+                radial-gradient(900px 520px at 88% 0%, rgba(193, 166, 113, 0.18), transparent 55%),
+                radial-gradient(900px 640px at 50% 115%, rgba(255,134,173,.12), transparent 62%),
+                var(--mauve-bg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(131, 100, 117, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,.1);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(252,251,252,.9);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            max-width: 42rem;
+            color: rgba(252,251,252,.9);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--rose), var(--rose-light));
+            border: 2px solid rgba(255,77,125,.3);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.1);
+            border: 2px solid rgba(255,255,255,.3);
+            color: white;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,.2);
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: linear-gradient(180deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.02) 100%);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+        }
+
+        .product-image {
+            height: 260px;
+            overflow: hidden;
+            background: rgba(0,0,0,.2);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(1.05) contrast(1.03);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: rgba(252,251,252,.95);
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: white;
+        }
+
+        .product-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(255,77,125,.1);
+            color: var(--rose);
+            border: 1px solid rgba(255,77,125,.2);
+        }
+
+        .footer {
+            background: rgba(66,49,59,0.5);
+            backdrop-filter: blur(4px);
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding: 3rem 1.5rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(252,251,252,.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,.1);
+            color: rgba(252,251,252,.6);
+        }
+
+        .section-title {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgba(252,251,252,.85);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="brand">Story Frames</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Cart (0)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Personalized gifts that come to life.</h1>
+        <p>
+            Send us a photo — we transform it into a short video and embed it into your chosen product. 
+            A moving memory that feels premium, personal, and unforgettable.
+        </p>
+        <a href="#products" class="btn btn-primary">Shop Now</a>
+    </section>
+
+    <section class="container" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <p class="section-subtitle">Transform your cherished memories into magical video stories</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/images/storyframes/frame-1.jpg" alt="Premium Frame">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Premium Frame</h3>
+                    <div class="product-footer">
+                        <span class="product-price">€49.99</span>
+                        <span class="product-badge">View</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/images/storyframes/ball-1.jpg" alt="Video Ball">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Video Ball</h3>
+                    <div class="product-footer">
+                        <span class="product-price">€39.00</span>
+                        <span class="product-badge">View</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="/images/storyframes/card-1.jpg" alt="Digital Card">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Digital Greeting Card</h3>
+                    <div class="product-footer">
+                        <span class="product-price">€29.00</span>
+                        <span class="product-badge">View</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Story Frames</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Premium Frames</a></li>
+                    <li><a href="#">Video Balls</a></li>
+                    <li><a href="#">Digital Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Story Frames. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
