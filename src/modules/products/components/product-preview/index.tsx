@@ -60,7 +60,7 @@ export default async function ProductPreview({
               </div>
             )}
             <div className="text-xs text-storyframes-muted mt-1 leading-tight">
-              {product.metadata?.paymentNote || "PayPal (card) • Bulgaria COD"}
+              {(product.metadata as any)?.paymentNote || "PayPal (card) • Bulgaria COD"}
             </div>
           </div>
           <div className="storyframes-tag text-storyframes-text">
