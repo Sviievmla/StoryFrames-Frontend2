@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+:root {
+  --mauve-bg: #836475;
+  --panel: rgba(255,255,255,.06);
+  --panel2: rgba(0,0,0,.25);
+  --text-light: #fcfbfc;
+  --text-muted: rgba(252,251,252,.85);
+  --line: rgba(255,255,255,.14);
+  --rose: #ff4d7d;
+  --rose-light: #ff86ad;
+  --gold: #e7c27a;
+  --shadow-xl: 0 18px 70px rgba(0,0,0,.50);
+  --shadow-lg: 0 12px 30px rgba(0,0,0,.35);
+}
 
 @layer utilities {
   /* Chrome, Safari and Opera */
