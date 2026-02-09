@@ -34,6 +34,17 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        storyframes: {
+          bg: "#836475",
+          text: "#fcfbfc",
+          muted: "rgba(252, 251, 252, 0.85)",
+          line: "rgba(255, 255, 255, 0.14)",
+          rose: "#ff4d7d",
+          rose2: "#ff86ad",
+          gold: "#e7c27a",
+          panel: "rgba(255, 255, 255, 0.06)",
+          panel2: "rgba(0, 0, 0, 0.25)",
+        },
       },
       borderRadius: {
         none: "0px",
@@ -60,6 +71,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "Manrope",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
@@ -68,6 +80,11 @@ module.exports = {
           "Helvetica Neue",
           "Ubuntu",
           "sans-serif",
+        ],
+        serif: [
+          "Playfair Display",
+          "Georgia",
+          "serif",
         ],
       },
       keyframes: {

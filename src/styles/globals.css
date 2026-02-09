@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -108,5 +110,55 @@
 
   .text-3xl-semi {
     @apply text-[32px] leading-[44px] font-semibold;
+  }
+
+  /* Story Frames Custom Styles */
+  .storyframes-hero-bg {
+    background: linear-gradient(180deg, rgba(131, 100, 117, 0.95) 0%, rgba(131, 100, 117, 0.98) 100%),
+                radial-gradient(900px 520px at 12% -8%, rgba(255, 77, 125, 0.26), transparent 60%),
+                radial-gradient(900px 520px at 88% 0%, rgba(193, 166, 113, 0.18), transparent 55%),
+                radial-gradient(900px 640px at 50% 115%, rgba(255, 134, 173, 0.12), transparent 62%),
+                #836475;
+  }
+
+  .storyframes-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .storyframes-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(380px 220px at 18% 10%, rgba(255, 77, 125, 0.16), transparent 60%),
+                radial-gradient(360px 240px at 90% 25%, rgba(231, 194, 122, 0.12), transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .storyframes-btn-primary {
+    border-color: rgba(255, 77, 125, 0.55);
+    background: linear-gradient(180deg, rgba(255, 77, 125, 0.25), rgba(255, 255, 255, 0.03));
+  }
+
+  .storyframes-btn-gold {
+    border-color: rgba(231, 194, 122, 0.42);
+    background: linear-gradient(180deg, rgba(231, 194, 122, 0.18), rgba(255, 255, 255, 0.03));
+  }
+
+  .storyframes-tag {
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 77, 125, 0.35);
+    background: rgba(255, 77, 125, 0.12);
+    font-weight: 900;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .storyframes-card:hover .storyframes-tag {
+    background: rgba(255, 77, 125, 0.20);
+    border-color: rgba(255, 77, 125, 0.45);
   }
 }
