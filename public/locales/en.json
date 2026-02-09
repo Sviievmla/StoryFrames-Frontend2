@@ -1,0 +1,42 @@
+{
+  "header": {
+    "about": "About",
+    "gallery": "Gallery",
+    "services": "Services",
+    "cart": "Cart",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "footer": {
+    "copyright": "All rights reserved"
+  },
+  "buttons": {
+    "viewProducts": "View Products",
+    "orderByEmail": "Order by Email",
+    "messageOnFacebook": "Message on Facebook",
+    "addToCart": "Add to Cart",
+    "checkout": "Checkout",
+    "continueShopping": "Continue Shopping"
+  },
+  "sections": {
+    "products": "Products",
+    "featuredProducts": "Featured Products",
+    "newArrivals": "New Arrivals"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "shipping": "Shipping",
+    "tax": "Tax"
+  },
+  "account": {
+    "title": "Account",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "myOrders": "My Orders",
+    "profile": "Profile"
+  }
+}

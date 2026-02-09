@@ -1,0 +1,42 @@
+{
+  "header": {
+    "about": "За нас",
+    "gallery": "Галерия",
+    "services": "Услуги",
+    "cart": "Количка",
+    "contact": "Контакти",
+    "menu": "Меню"
+  },
+  "footer": {
+    "copyright": "Всички права запазени"
+  },
+  "buttons": {
+    "viewProducts": "Разгледай продукти",
+    "orderByEmail": "Поръчай по имейл",
+    "messageOnFacebook": "Съобщение във Facebook",
+    "addToCart": "Добави в количка",
+    "checkout": "Поръчай",
+    "continueShopping": "Продължи пазаруването"
+  },
+  "sections": {
+    "products": "Продукти",
+    "featuredProducts": "Препоръчани продукти",
+    "newArrivals": "Нови продукти"
+  },
+  "cart": {
+    "title": "Количка за пазаруване",
+    "empty": "Вашата количка е празна",
+    "subtotal": "Междинна сума",
+    "total": "Общо",
+    "shipping": "Доставка",
+    "tax": "Данък"
+  },
+  "account": {
+    "title": "Акаунт",
+    "login": "Вход",
+    "register": "Регистрация",
+    "logout": "Изход",
+    "myOrders": "Моите поръчки",
+    "profile": "Профил"
+  }
+}
