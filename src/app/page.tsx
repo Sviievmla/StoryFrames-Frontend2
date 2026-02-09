@@ -1,3 +1,9 @@
+/**
+ * Static homepage for GitHub Pages deployment
+ * This page is used when the site is deployed to GitHub Pages as a static export.
+ * It displays the StoryFrames hero section without requiring backend data.
+ */
+
 import { Metadata } from "next"
 import Hero from "@modules/home/components/hero"
 

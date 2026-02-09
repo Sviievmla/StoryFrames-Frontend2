@@ -8,6 +8,11 @@ checkEnvVariables()
 const S3_HOSTNAME = process.env.MEDUSA_CLOUD_S3_HOSTNAME
 const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
 
+/**
+ * GitHub Pages configuration
+ * When GITHUB_PAGES=true, the app is configured for static export to GitHub Pages
+ * with proper base path and asset prefix for the repository subdirectory
+ */
 const isGitHubPages = process.env.GITHUB_PAGES === "true"
 const basePath = isGitHubPages ? "/StoryFrames-Frontend2" : ""
 

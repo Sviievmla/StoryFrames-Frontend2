@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+# This workflow builds the Next.js application as a static site and deploys it to GitHub Pages.
+# The application uses dynamic routes ([countryCode]) which are incompatible with static export,
+# so we temporarily rename that directory during the build to only export the static homepage.
+
 on:
   push:
     branches:
