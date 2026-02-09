@@ -51,21 +51,16 @@ Added to `globals.css`:
 ### 3. Hero Section Update ✅
 **File Modified**: `src/modules/home/components/hero/index.tsx`
 
-#### Content Changes
-- **Title**: "Personalized gifts that come to life."
-- **Body**: "Send us a photo — we transform it into a short video and embed it into your chosen product. A moving memory that feels premium, personal, and unforgettable."
+#### Update (Feb 9, 2026): Reverted to Original Template Style
+Per user request, the hero section has been reverted to the original Medusa template design while maintaining Story Frames colors:
 
-#### CTA Buttons
-Three call-to-action buttons added:
-1. **"View products"** (Primary - rose gradient) - Links to #products
-2. **"Order by email"** (Gold gradient) - Opens email to Sviievmla@gmail.com
-3. **"Message on Facebook"** (Secondary) - Links to Facebook page
+- **Layout**: Centered, 75vh height (original template style)
+- **Title**: "Ecommerce Starter Template"
+- **Subtitle**: "Powered by Medusa and Next.js"
+- **CTA**: Single "View on GitHub" button
+- **Colors**: Story Frames mauve background (`bg-storyframes-bg`) with Story Frames text colors
 
-#### "How Ordering Works" Card
-Added card with three steps:
-- "You send us your photo (even an old paper photo)."
-- "We turn it into a short "magic" video story."
-- "We deliver it inside your selected product."
+This preserves the clean, simple header design while integrating with the Story Frames color palette.
 
 ### 4. Product Card Styling ✅
 **File Modified**: `src/modules/products/components/product-preview/index.tsx`
