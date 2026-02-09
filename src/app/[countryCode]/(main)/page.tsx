@@ -6,10 +6,14 @@ import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "StoryFrames - Personalized Gifts That Come to Life",
   description:
-    "A performant frontend ecommerce starter template with Next.js 15 and Medusa.",
+    "Send us a photo — we transform it into a short video and embed it into your chosen product. A moving memory that feels premium, personal, and unforgettable.",
 }
+
+// For static export, we need to mark this as static
+export const dynamic = 'force-static'
+export const dynamicParams = false
 
 export default async function Home(props: {
   params: Promise<{ countryCode: string }>
@@ -17,6 +21,17 @@ export default async function Home(props: {
   const params = await props.params
 
   const { countryCode } = params
+
+  // For static export mode (GitHub Pages), skip backend calls
+  const isStaticExport = process.env.GITHUB_PAGES === 'true'
+
+  if (isStaticExport) {
+    return (
+      <>
+        <Hero />
+      </>
+    )
+  }
 
   const region = await getRegion(countryCode)
 

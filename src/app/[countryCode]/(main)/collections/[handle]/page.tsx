@@ -15,6 +15,8 @@ type Props = {
   }>
 }
 
+export const dynamicParams = false
+
 export const PRODUCT_LIMIT = 12
 
 export async function generateStaticParams() {

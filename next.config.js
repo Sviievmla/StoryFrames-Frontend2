@@ -8,6 +8,9 @@ checkEnvVariables()
 const S3_HOSTNAME = process.env.MEDUSA_CLOUD_S3_HOSTNAME
 const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true"
+const basePath = isGitHubPages ? "/StoryFrames-Frontend2" : ""
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -24,7 +27,13 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // GitHub Pages configuration
+  basePath: basePath,
+  assetPrefix: basePath,
+  output: isGitHubPages ? "export" : undefined,
+  trailingSlash: true,
   images: {
+    unoptimized: isGitHubPages ? true : false,
     remotePatterns: [
       {
         protocol: "http",

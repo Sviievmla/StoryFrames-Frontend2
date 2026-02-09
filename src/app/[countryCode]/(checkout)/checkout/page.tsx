@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Checkout",
 }
 
+// For GitHub Pages static export, skip this page
+export const dynamicParams = false
+
 export default async function Checkout() {
   const cart = await retrieveCart()
 
