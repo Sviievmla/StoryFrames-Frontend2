@@ -1,6 +1,5 @@
 import { getBaseURL } from "@lib/util/env"
 import { Metadata } from "next"
-import { TranslationProvider } from "@lib/context/translation-context"
 import "styles/globals.css"
 
 export const metadata: Metadata = {
@@ -11,9 +10,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" data-mode="light">
       <body>
-        <TranslationProvider>
-          <main className="relative">{props.children}</main>
-        </TranslationProvider>
+        <main className="relative">{props.children}</main>
       </body>
     </html>
   )
