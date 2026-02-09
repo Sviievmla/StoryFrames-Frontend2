@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Frames - Professional Header Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Professional Light Header -->
+  <header class="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+    <nav class="max-w-[1440px] w-full mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo/Brand -->
+        <div class="flex items-center">
+          <a href="/" class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors">
+            Story Frames
+          </a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/about" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            За нас
+          </a>
+          <a href="/gallery" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            Галерия
+          </a>
+          <a href="/services" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            Услуги
+          </a>
+          <a href="/cart" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            Количка (0)
+          </a>
+          <a href="/contact" class="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+            Контакти
+          </a>
+
+          <!-- Language Switcher -->
+          <div class="flex items-center space-x-1 text-sm font-medium border-l border-gray-300 pl-6 ml-2">
+            <button class="px-2 py-1 transition-colors text-gray-900 font-bold">
+              BG
+            </button>
+            <span class="text-gray-400">|</span>
+            <button class="px-2 py-1 transition-colors text-gray-500 hover:text-gray-700">
+              EN
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden flex items-center space-x-4">
+          <!-- Language Switcher Mobile -->
+          <div class="flex items-center space-x-1 text-xs font-medium">
+            <button class="px-1 transition-colors text-gray-900 font-bold">
+              BG
+            </button>
+            <span class="text-gray-400">|</span>
+            <button class="px-1 transition-colors text-gray-500">
+              EN
+            </button>
+          </div>
+          
+          <!-- Cart Mobile -->
+          <a href="/cart" class="text-sm font-medium text-gray-700">
+            🛒
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Sample Content -->
+  <main class="max-w-[1440px] w-full mx-auto px-6 py-12">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">
+        Professional Minimalistic Header
+      </h1>
+      <p class="text-gray-700 mb-4">
+        This is the new professional light header for Story Frames with:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+        <li>Clean white background with subtle shadow and border</li>
+        <li>Logo/brand on the left</li>
+        <li>Navigation menu on the right</li>
+        <li>Bilingual support (BG | EN)</li>
+        <li>Responsive design (mobile/desktop)</li>
+        <li>Semantic HTML and accessible markup</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mb-3 mt-8">
+        Menu Items
+      </h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+        <li>About (За нас)</li>
+        <li>Gallery (Галерия)</li>
+        <li>Services (Услуги)</li>
+        <li>Cart (Количка)</li>
+        <li>Contact (Контакти)</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-gray-900 mb-3 mt-8">
+        Features
+      </h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-700">
+        <li>Sticky header (stays at top when scrolling)</li>
+        <li>Hover effects on menu items</li>
+        <li>Language switcher with active state</li>
+        <li>Cart counter integration</li>
+        <li>Mobile-responsive</li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    // Language switcher simulation
+    const bgBtn = document.querySelectorAll('button')[0];
+    const enBtn = document.querySelectorAll('button')[1];
+    
+    const translations = {
+      bg: {
+        about: 'За нас',
+        gallery: 'Галерия',
+        services: 'Услуги',
+        cart: 'Количка',
+        contact: 'Контакти'
+      },
+      en: {
+        about: 'About',
+        gallery: 'Gallery',
+        services: 'Services',
+        cart: 'Cart',
+        contact: 'Contact'
+      }
+    };
+
+    function setLanguage(lang) {
+      const menuItems = document.querySelectorAll('.hidden.md\\:flex a');
+      const t = translations[lang];
+      
+      menuItems[0].textContent = t.about;
+      menuItems[1].textContent = t.gallery;
+      menuItems[2].textContent = t.services;
+      menuItems[3].textContent = t.cart + ' (0)';
+      menuItems[4].textContent = t.contact;
+
+      // Update button states
+      document.querySelectorAll('button').forEach((btn, i) => {
+        if ((lang === 'bg' && i % 2 === 0) || (lang === 'en' && i % 2 === 1)) {
+          btn.classList.add('text-gray-900', 'font-bold');
+          btn.classList.remove('text-gray-500', 'hover:text-gray-700');
+        } else {
+          btn.classList.remove('text-gray-900', 'font-bold');
+          btn.classList.add('text-gray-500', 'hover:text-gray-700');
+        }
+      });
+    }
+
+    document.querySelectorAll('button').forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        setLanguage(i % 2 === 0 ? 'bg' : 'en');
+      });
+    });
+  </script>
+</body>
+</html>
