@@ -45,11 +45,13 @@ All product images are located in:
 ```
 public/images/storyframes/
   - ball-1.jpg, ball-2.jpg, ball-3.jpg
-  - frame-1.jpg, frame-2.jpg, frame-3.jpeg
+  - frame-1.jpg, frame-2.jpg, frame-3.jpeg (Note: mixed .jpg/.jpeg extensions from legacy)
   - card-1.jpg, card-2.jpg, card-3.jpg
   - logo.png
   - gallery-1.jpeg, gallery-2.png, gallery-3.jpg
 ```
+
+**Note**: Some images use `.jpeg` extension while others use `.jpg`. These are the original filenames from the legacy repository and both are supported.
 
 ## Notes
 
