@@ -1,5 +1,6 @@
 import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
+import { GITHUB_REPO_URL } from "@lib/constants"
 
 const Hero = () => {
   return (
@@ -31,7 +32,7 @@ const Hero = () => {
           </p>
         </span>
         <a
-          href="https://github.com/Sviievmla/StoryFrames-Frontend2"
+          href={GITHUB_REPO_URL}
           target="_blank"
         >
           <Button 

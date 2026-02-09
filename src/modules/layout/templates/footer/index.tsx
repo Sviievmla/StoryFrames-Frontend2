@@ -1,5 +1,6 @@
 import { listCategories } from "@lib/data/categories"
 import { listCollections } from "@lib/data/collections"
+import { GITHUB_REPO_URL } from "@lib/constants"
 import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
@@ -113,7 +114,7 @@ export default async function Footer() {
               <ul className="grid grid-cols-1 gap-y-2 text-white/70 txt-small">
                 <li>
                   <a
-                    href="https://github.com/Sviievmla/StoryFrames-Frontend2"
+                    href={GITHUB_REPO_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
@@ -133,7 +134,7 @@ export default async function Footer() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/Sviievmla/StoryFrames-Frontend2"
+                    href={GITHUB_REPO_URL}
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
